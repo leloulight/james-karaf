@@ -22,6 +22,7 @@
         <mailet.version>2.4</mailet.version>
         <protocols.version>1.6.3-SNAPSHOT</protocols.version>
         <netty.version>3.3.1.Final</netty.version>
+        <mailbox.version>0.5-SNAPSHOT</mailbox.version>
     </properties>
 
     <build>
