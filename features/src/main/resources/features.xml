@@ -13,6 +13,14 @@
         <bundle>mvn:org.springframework/spring-expression/${spring.version}</bundle>
     </feature>
 
+    <feature name="commons-configuration" version="${commons-configuration.version}">
+        <bundle>mvn:commons-configuration/commons-configuration/${commons-configuration.version}</bundle>
+        <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
+        <bundle>mvn:commons-lang/commons-lang/2.6</bundle>
+        <bundle>mvn:commons-logging/commons-logging/1.1.1</bundle>
+    </feature>
+
+
     <feature name="apache-james-mime4j" version="${mime4j.version}">
         <bundle>mvn:org.apache.james/apache-mime4j-core/${mime4j.version}</bundle>
         <bundle>mvn:org.apache.james/apache-mime4j-dom/${mime4j.version}</bundle>
@@ -21,10 +29,8 @@
     <!-- james 3.0-beta5 features -->
     <feature name="james-server-lifecycle-api" version="${james-server.version}">
         <bundle>mvn:org.apache.james/james-server-lifecycle-api/${james-server.version}</bundle>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
-        <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
-        <bundle>mvn:commons-lang/commons-lang/2.6</bundle>
-        <bundle>mvn:org.slf4j/slf4j-api/1.6.1</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
+        <bundle>mvn:org.slf4j/slf4j-api/${slf4j.version}</bundle>
     </feature>
 
     <feature name="james-server-filesystem-api" version="${james-server.version}">
@@ -64,10 +70,10 @@
         <feature version="${james-server.version}">james-server-lifecycle-api</feature>
         <feature version="${james-server.version}">james-server-filesystem-api</feature>
         <feature version="${james-server.version}">james-server-util</feature>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:org.apache.james.protocols/protocols-api/${protocols.version}</bundle>
         <bundle>mvn:org.apache.james.protocols/protocols-netty/${protocols.version}</bundle>
         <bundle>mvn:io.netty/netty/${netty.version}</bundle>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
     </feature>
 
     <feature name="james-server-core" version="${james-server.version}">
@@ -105,6 +111,7 @@
     <feature name="james-server-dnsservice-dnsjava" version="${james-server.version}">
         <bundle>mvn:org.apache.james/james-server-dnsservice-dnsjava/${james-server.version}</bundle>
         <feature version="${james-server.version}">james-server-dnsservice-api</feature>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
     </feature>
@@ -124,7 +131,7 @@
         <feature version="${james-server.version}">james-server-core</feature>
         <feature version="${james-server.version}">james-server-dnsservice-apo</feature>
         <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
     </feature>
@@ -136,7 +143,7 @@
         <feature version="${james-server.version}">james-server-dnsservice-api</feature>
         <feature version="${james-server.version}">james-server-filesystem-api</feature>
         <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
     </feature>
 
@@ -146,7 +153,7 @@
         <feature version="${james-server.version}">james-server-dnsservice-api</feature>
         <feature version="${james-server.version}">james-server-data-api</feature>
         <feature version="${james-server.version}">james-server-data-library</feature>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:commons-codec/commons-codec/1.5</bundle>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
@@ -168,7 +175,7 @@
         <feature version="${james-server.version}">james-server-data-api</feature>
         <feature version="${james-server.version}">james-server-data-library</feature>
         <feature version="${james-server.version}">james-server-core</feature>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:commons-codec/commons-codec/1.5</bundle>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
@@ -185,7 +192,7 @@
         <feature version="${james-server.version}">james-server-data-library</feature>
         <feature version="${james-server.version}">james-server-core</feature>
         <feature version="${james-server.version}">james-server-dnsservice-api</feature>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
@@ -196,7 +203,7 @@
         <feature version="${james-server.version}">james-server-lifecycle-api</feature>
         <feature version="${james-server.version}">james-server-data-api</feature>
         <feature version="${james-server.version}">james-server-util</feature>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
     </feature>
 
@@ -208,8 +215,116 @@
         <bundle>mvn:org.apache.james/james-mailbox-api/${mailbox.version}</bundle>
         <bundle>mvn:org.apache.james/james-mailbox-store/${mailbox.version}</bundle>
         <feature version="${mime4j.version}">apache-james-mime4j</feature>
-        <bundle>mvn:commons-configuration/commons-configuration/1.6</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:org.apache.james/james-mailbox-maildir/${mailbox.version}</bundle>
     </feature>
 
+    <feature name="james-server-mailet-container-camel" version="${james-server.version}">
+        <bundle>mvn:org.apache.james/james-server-mailetcontainer-camel/${james-server.version}</bundle>
+        <feature version="${james-server.version}">james-server-mailetcontainer-api</feature>
+        <feature version="${james-server.version}">james-server-queue-api</feature>
+        <feature version="${james-server.version}">james-server-util</feature>
+        <feature version="${james-server.version}">james-server-dnsservice-api</feature>
+        <feature version="${james-server.version}">james-server-dnsservice-library</feature>
+        <feature version="${james-server.version}">james-server-lifecycle-api</feature>
+        <feature version="${james-server.version}">james-server-data-api</feature>
+        <feature version="${james-server.version}">james-server-core</feature>
+        <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
+        <feature version="${james-server.version}">james-server-filesystem-api</feature>
+        <feature version="${james-server.version}">james-server-data-library</feature>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
+        <bundle>mvn:org.apache.camel/camel-core/2.5.0</bundle>
+        <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
+    </feature>
+
+    <feature name="james-server-mailets" version="${james-server.version}">
+        <bundle>mvn:org.apache.james/james-server-mailets/${james-server.version}</bundle>
+        <feature version="${james-server.version}">james-server-util</feature>
+        <feature version="${james-server.version}">james-server-dnsservice-library</feature>
+        <feature version="${james-server.version}">james-server-lifecycle-api</feature>
+        <feature version="${james-server.version}">james-server-filesystem-api</feature>
+        <feature version="${james-server.version}">james-server-queue-api</feature>
+        <feature version="${james-server.version}">james-server-dnsservice-api</feature>
+        <feature version="${james-server.version}">james-server-data-api</feature>
+        <feature version="${james-server.version}">james-server-data-library</feature>
+        <feature version="${james-server.version}">james-server-core</feature>
+        <bundle>mvn:org.apache.james/apache-jsieve-mailet/${jsieve.version}</bundle>
+        <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
+        <bundle>mvn:org.apache.james.jspf/apache-jspf-resolver/${jspf-resolver.version}</bundle>
+        <bundle>mvn:org.apache.james/james-mailbox-api/${mailbox.version}</bundle>
+        <bundle>mvn:org.apache.james.protocols/protocols-smtp/${protocols.version}</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
+        <bundle>mvn:org.apache.camel/camel-core/2.5.0</bundle>
+        <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
+    </feature>
+
+    <feature name="james-protocols-imap" version="${protocols.version}">
+        <bundle>mvn:org.apache.james.protocols/protocols-imap/${protocols.version}</bundle>
+        <bundle>mvn:org.apache.james/apache-james-mailbox-api/${mailbox.version}</bundle>
+        <feature version="${mime4j.version}">apache-james-mime4j</feature>
+        <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
+        <bundle>mvn:commons-codec/commons-codec/1.5</bundle>
+        <bundle>mvn:commons-lang/commons-lang/2.6</bundle>
+        <bundle>mvn:com.beetstra.jutf7/jutf7/1.0.0</bundle>
+    </feature>
+
+    <feature name="james-server-protocols-imap" version="${james-server.version}">
+        <bundle>mvn:org.apache.james/james-server-protocols-imap4/${james-server.version}</bundle>
+        <feature version="${james-server.version}">james-server-protocols-library</feature>
+        <feature version="${james-server.version}">james-server-filesystem-api</feature>
+        <feature version="${protocols.version}">james-protocols-imap</feature>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
+        <bundle>mvn:commons-io/commons-io/2.0.1</bundle>
+        <bundle>mvn:org.apache.james.protocols/protocols-netty/${protocols.version}</bundle>
+        <bundle>mvn:org.slf4j/slf4j-api/${slf4j.version}</bundle>
+        <bundle>mvn:io.netty/netty/${netty.version}</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
+        <bundle>mvn:com.beetstra.jutf7/jutf7/1.0.0</bundle>
+    </feature>
+
+    <feature name="james-server-protocols-smtp" version="${james-server.version}">
+        <bundle>mvn:org.apache.james/james-server-protocols-smtp/${james-server.version}</bundle>
+        <feature version="${james-server.version}">james-server-util</feature>
+        <feature version="${james-server.version}">james-server-dnsservice-library</feature>
+        <feature version="${james-server.version}">james-server-queue-api</feature>
+        <feature version="${james-server.version}">james-server-filesystem-api</feature>
+        <feature version="${james-server.version}">james-server-data-api</feature>
+        <feature version="${james-server.version}">james-server-lifecycle-api</feature>
+        <feature version="${james-server.version}">james-server-dnsservice-api</feature>
+        <feature version="${james-server.version}">james-server-core</feature>
+        <feature version="${james-server.version}">james-server-protocols-library</feature>
+        <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
+
+        <bundle>mvn:org.apache.james.protocols/protocols-api/${protocols.version}</bundle>
+        <bundle>mvn:org.apache.james.protocols/protocols-smtp/${protocols.version}</bundle>
+        <bundle>mvn:org.apache.james.protocols/protocols-netty/${protocols.version}</bundle>
+        <bundle>mvn:org.apache.james.jspf/apache-jspf-resolver/${jspf-resolver.version}</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
+
+        <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-activation_1.1_spec/1.1</bundle>
+        <bundle>mvn:io.netty/netty/${netty.version}</bundle>
+    </feature>
+
+    <feature name="james-server-protocols-lmtp" version="${james-server.version}">
+        <bundle>mvn:org.apache.james/james-server-protocols-lmtp/${james-server.version}</bundle>
+        <feature version="${james-server.version}">james-server-protocols-smtp</feature>
+        <feature version="${james-server.version}">james-server-lifecycle-api</feature>
+        <feature version="${james-server.version}">james-server-core</feature>
+        <feature version="${james-server.version}">james-server-protocols-library</feature>
+        <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
+        <bundle>mvn:org.apache.james.protocols/protocols-api/${protocols.version}</bundle>
+        <bundle>mvn:org.apache.james.protocols/protocols-smtp/${protocols.version}</bundle>
+        <bundle>mvn:org.apache.james.protocols/protocols-lmtp/${protocols.version}</bundle>
+        <bundle>mvn:org.apache.james.protocols/protocols-netty/${protocols.version}</bundle>
+        <bundle>mvn:org.apache.james/apache-james-mailbox-api/${mailbox.version}</bundle>
+        <feature version="${commons-configuration.version}">commons-configuration</feature>
+        <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
+        <bundle>mvn:io.netty/netty/${netty.version}</bundle>
+        <bundle>mvn:org.slf4j/slf4j-api/${slf4j.version}</bundle>
+    </feature>
 </features>
