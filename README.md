@@ -12,3 +12,19 @@ james-karaf  - main project
 +- intetgration - contains PAX-EXAM integration tests for deploying james inside Karaf
 ~~~
 This project aims to migrate Apache James to OSGi, particular Karaf.
+
+
+Build and run
+=============
+
+The project builds and publishes a set of Karaf features:
+~~~
+$mvn clean install 
+~~~ 
+
+Inside Karaf-2.3.0 run: 
+~~~
+features:addurl mvn:org.apache.james/james-features/${version}/xml/features
+~~~
+
+Now you can install Apache James features with **features:install**. 
