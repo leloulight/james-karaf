@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features name="apache-james-features-${project.version}">
+<features name="apache-james-features-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.1.0 ">
 
     <feature name="spring" version="${spring.version}">
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/1.0_3</bundle>
@@ -19,7 +21,6 @@
         <bundle>mvn:commons-lang/commons-lang/2.6</bundle>
         <bundle>mvn:commons-logging/commons-logging/1.1.1</bundle>
     </feature>
-
 
     <feature name="apache-james-mime4j" version="${mime4j.version}">
         <bundle>mvn:org.apache.james/apache-mime4j-core/${mime4j.version}</bundle>
@@ -41,7 +42,7 @@
 
     <feature name="james-server-data-api" version="${james-server.version}">
         <bundle>mvn:org.apache.james/james-server-data-api/${james-server.version}</bundle>
-        <bundle>mvn:org.apache.james/james-mailet/${mailet-version}</bundle>
+        <bundle>mvn:org.apache.james/apache-mailet/${mailet-version}</bundle>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
     </feature>
 
@@ -79,8 +80,8 @@
     <feature name="james-server-core" version="${james-server.version}">
         <bundle>mvn:org.apache.james/james-server-core/${james-server.version}</bundle>
         <feature version="${james-server.version}">james-server-lifecycle-api</feature>
-        <bundle>mvn:org.apache.james/james-mailet/2.4</bundle>
-        <bundle>mvn:org.apache.james/james-mailet-base/1.1</bundle>
+        <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
+        <bundle>mvn:org.apache.james/apache-mailet-base/1.1</bundle>
         <bundle>mvn:commons-io/commons-io/2.0.1</bundle>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
         <bundle>mvn:org.apache.geronimo.specs/geronimo-activation_1.1_spec/1.1</bundle>
@@ -113,6 +114,14 @@
         <feature version="${james-server.version}">james-server-dnsservice-api</feature>
         <feature version="${commons-configuration.version}">commons-configuration</feature>
         <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
+        <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
+    </feature>
+
+    <feature name="james-server-dnsservice-library" version="${james-server.version}">
+        <bundle>mvn:org.apache.james/james-server-dnsservice-library/${james-server.version}</bundle>
+        <feature version="${james-server.version}">james-server-dnsservice-api</feature>
+        <bundle>mvn:org.apache.james/apache-mailet/2.4</bundle>
+        <bundle>mvn:org.slf4j/slf4j-api/${slf4j.version}</bundle>
         <bundle>mvn:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.3</bundle>
     </feature>
 
